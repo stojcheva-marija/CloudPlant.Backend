@@ -1,0 +1,206 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Service\\CloudPlant.Service.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj",
+        "projectName": "CloudPlant.Domain",
+        "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj",
+        "packagesPath": "C:\\Users\\Marija\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Marija\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Repository\\CloudPlant.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Repository\\CloudPlant.Repository.csproj",
+        "projectName": "CloudPlant.Repository",
+        "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Repository\\CloudPlant.Repository.csproj",
+        "packagesPath": "C:\\Users\\Marija\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Marija\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj": {
+                "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Service\\CloudPlant.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Service\\CloudPlant.Service.csproj",
+        "projectName": "CloudPlant.Service",
+        "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Service\\CloudPlant.Service.csproj",
+        "packagesPath": "C:\\Users\\Marija\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Marija\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj": {
+                "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj"
+              },
+              "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Repository\\CloudPlant.Repository.csproj": {
+                "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Repository\\CloudPlant.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
