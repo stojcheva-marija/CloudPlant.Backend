@@ -10,9 +10,10 @@ namespace CloudPlant.Domain.Domain_models
 {
     public class Device : BaseEntity
     {
-        public string MACAddress { get; set; }
+        public string Code { get; set; }
+        public string? MACAddress { get; set; }
         [ForeignKey("CloudPlantUserId")]
-        public virtual CloudPlantUser User { get; set; }
+        public virtual CloudPlantUser? User { get; set; } 
         public virtual List<Plant> Plants { get; set; }
         public Device()
         {

@@ -6,6 +6,7 @@ using CloudPlant.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Metrics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,14 +24,34 @@ namespace CloudPlant.Service.Implementation
             _userRepository = userRepository;
         }
 
-        public Device CreateDevice(DeviceDTO deviceDTO)
+        public Device AddUserToDevice(int deviceId, int userId)
         {
-            var user = _userRepository.GetById(deviceDTO.UserId);
+            var device = _deviceRepository.GetById(deviceId);
 
+            if (device == null)
+            {
+                throw new Exception("Device not found");
+            }
+
+            var user = _userRepository.GetById(userId);
+
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
+
+            device.User = user;
+
+            _deviceRepository.Update(device);
+
+            return device;
+        }
+
+        public Device CreateDevice(string code)
+        {
             var device = new Device
             {
-                MACAddress = deviceDTO.MACAddress,
-                User = user
+                Code = code,
             };
 
             _deviceRepository.Insert(device);
@@ -38,9 +59,69 @@ namespace CloudPlant.Service.Implementation
             return device;
         }
 
-        public DeviceDTO GetDevice(int id)
+        public DeviceDTO GetDeviceById(int id)
         {
-            return (DeviceDTO) _deviceRepository.GetById(id);
+                var device = _deviceRepository.GetById(id);
+                if (device == null)
+                {
+                    throw new Exception("Device not found");
+                }
+                return (DeviceDTO)device;
         }
+
+        public DeviceDTO GetDeviceByCode(string code)
+        {
+            var device = _deviceRepository.GetByCode(code);
+            if (device == null)
+            {
+                throw new Exception("Device not found");
+            }
+            return (DeviceDTO)device;
+        }
+
+        public List<PlantWithPlantTypeDTO> ListPlants(string code)
+        {
+            Device device = _deviceRepository.GetByCode(code);
+            if (device == null)
+            {
+                throw new Exception("Device not found");
+            }
+            List<PlantWithPlantTypeDTO> plantDTOs = device.Plants.Select(plant => (PlantWithPlantTypeDTO)plant).ToList();
+
+            return plantDTOs;
+        }
+
+        public DeviceDTO EditDevice(DeviceDTO deviceDTO)
+        {
+            var device = _deviceRepository.GetById(deviceDTO.Id);
+            if (device == null)
+            {
+                throw new Exception("Device not found");
+            }
+            var user = _userRepository.GetById(deviceDTO.UserId);
+            if (user == null)
+            {
+                throw new Exception("User not found");
+            }
+
+            device.Code = deviceDTO.Code;
+            device.MACAddress = deviceDTO.MACAddress;
+            device.User = user;
+
+            _deviceRepository.Update(device);
+            return (DeviceDTO)device;
+
+        }
+
+        public void DeleteDevice(DeviceDTO deviceDTO)
+        {
+            var device = _deviceRepository.GetById(deviceDTO.Id);
+            if (device == null)
+            {
+                throw new Exception("Device not found");
+            }
+            _deviceRepository.Delete(device);
+        }
+    
     }
 }

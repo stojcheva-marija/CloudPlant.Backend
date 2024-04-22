@@ -17,18 +17,51 @@ namespace CloudPlant.Controllers
             this._deviceService = deviceService;
         }
 
-        [HttpPost]
-        public IActionResult CreateDevice(DeviceDTO deviceDTO)
+        [HttpPost("CreateDevice")]
+        public IActionResult CreateDevice(String code)
         {
 
-            Device newDevice = _deviceService.CreateDevice(deviceDTO);
+            Device newDevice = _deviceService.CreateDevice(code);
             return Ok(newDevice);
         }
 
-        [HttpGet("{id}", Name = "GetDevice")]
-        public IActionResult GetDevice(int id)
+        [HttpPost("AddUserToDevice")]
+        public IActionResult AddUserToDevice(int deviceId, int userId)
         {
-            return Ok(_deviceService.GetDevice(id));
+
+            Device device = _deviceService.AddUserToDevice(deviceId, userId);
+            return Ok(device);
+        }
+
+        [HttpGet("GetDeviceById")]
+        public IActionResult GetDeviceById(int id)
+        {
+            return Ok(_deviceService.GetDeviceById(id));
+        }
+
+        [HttpGet("GetDeviceByCode")]
+        public IActionResult GetDeviceByCode(string code)
+        {
+            return Ok(_deviceService.GetDeviceByCode(code));
+        }
+
+        [HttpGet("ListPlantsByDevice")]
+        public IActionResult ListPlantsByDevice(string code)
+        {
+            return Ok(_deviceService.ListPlants(code));
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteDevice(DeviceDTO deviceDTO)
+        {
+            _deviceService.DeleteDevice(deviceDTO);
+            return Ok();
+        }
+
+        [HttpPut]
+        public IActionResult EditDevice(DeviceDTO deviceDTO)
+        {
+            return Ok(_deviceService.EditDevice(deviceDTO));
         }
     }
 }

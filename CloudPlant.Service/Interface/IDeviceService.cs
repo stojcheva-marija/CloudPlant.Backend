@@ -10,7 +10,12 @@ namespace CloudPlant.Service.Interface
 {
     public interface IDeviceService 
     {
-        Device CreateDevice(DeviceDTO deviceDTO);
-        DeviceDTO GetDevice(int id);
+        Device CreateDevice(String code);
+        DeviceDTO GetDeviceById(int id);
+        DeviceDTO GetDeviceByCode(string code);
+        Device AddUserToDevice(int deviceId, int userId);
+        List<PlantWithPlantTypeDTO> ListPlants(string code);
+        DeviceDTO EditDevice(DeviceDTO deviceDTO);
+        void DeleteDevice(DeviceDTO deviceDTO);
     }
 }

@@ -13,7 +13,7 @@ namespace CloudPlant.Domain.DTO
         public string Title { get; set; }
         public DateTime LastWatering { get; set; }
         public DateTime NextWatering { get; set; }
-        public int PlantTypeId { get; set; } 
+        public int PlantTypeId { get; set; }
         public int DeviceId { get; set; }
 
         public static explicit operator PlantDTO(Plant plant) => new PlantDTO
@@ -22,8 +22,8 @@ namespace CloudPlant.Domain.DTO
             Title = plant.Title,
             LastWatering = plant.LastWatering,
             NextWatering = plant.NextWatering,
-            PlantTypeId = plant.PlantType.Id,
             DeviceId = plant.Device.Id,
+            PlantTypeId = plant.PlantType.Id
         };
     }
 }

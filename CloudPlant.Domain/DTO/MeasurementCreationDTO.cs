@@ -8,7 +8,7 @@ namespace CloudPlant.Domain.DTO
 {
     public class MeasurementsCreationDTO
     {
-        public int DeviceID {get; set; } //Change to string
+        public int DeviceID {get; set; }
         public float LightIntensity { get; set; }   
         public float Temperature { get; set; }
         public float Humidity { get; set; }

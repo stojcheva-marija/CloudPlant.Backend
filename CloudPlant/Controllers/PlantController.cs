@@ -17,10 +17,10 @@ namespace CloudPlant.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreatePlant(PlantDTO plantDTO)
+        public IActionResult CreatePlant(PlantCreationDTO plantCreationDTO)
         {
-            var newPlant = _plantService.CreatePlant(plantDTO);
-            return CreatedAtRoute("GetPlant", new { newPlant.Id },newPlant);
+            var plant= _plantService.CreatePlant(plantCreationDTO);
+            return CreatedAtRoute("GetPlant", new { plant.Id }, plant);
         }
 
         [HttpDelete]

@@ -18,6 +18,10 @@ namespace CloudPlant.Service.Implementation
         public List<Measurement> CreateMeasurements(MeasurementsCreationDTO measurements)
         {
             var device = _deviceRepository.GetById(measurements.DeviceID);
+            if (device == null)
+            {
+                throw new Exception("Device not found");
+            }
             var plants = device.Plants;
 
             var measurementList = new List<Measurement>();

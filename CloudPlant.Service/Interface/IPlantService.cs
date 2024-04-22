@@ -10,9 +10,9 @@ namespace CloudPlant.Service.Interface
 {
     public interface IPlantService
     {
-        PlantDTO GetPlant(int id);
-        PlantDTO EditPlant(PlantDTO plantDTO);
-        PlantDTO CreatePlant(PlantDTO plantDTO);
+        PlantWithPlantTypeDTO GetPlant(int id);
+        PlantWithPlantTypeDTO EditPlant(PlantDTO plantDTO);
+        PlantWithPlantTypeDTO CreatePlant(PlantCreationDTO plantCreationDTO);
         void DeletePlant(PlantDTO plantDTO);
     }
 }

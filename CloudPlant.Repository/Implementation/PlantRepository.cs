@@ -34,7 +34,7 @@ namespace CloudPlant.Repository.Implementation
 
         public Plant GetById(int id)
         {
-            Plant plant = entities.Where(p => p.Id == id).Include(p => p.PlantType).Include(p => p.Device).Include(p => p.Measurements).FirstOrDefault();
+            Plant plant = entities.Where(p => p.Id == id).Include(p => p.PlantType).Include(p => p.Device).FirstOrDefault();
             return plant;
         }
 

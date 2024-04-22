@@ -30,6 +30,10 @@ namespace CloudPlant.Service.Implementation
 
         public CloudPlantUser GetUser(int id)
         {
+            CloudPlantUser user = _userRepository.GetById(id);
+            if(user == null) {
+                throw new Exception("User not found");
+            }
             return _userRepository.GetById(id);
         }
     }

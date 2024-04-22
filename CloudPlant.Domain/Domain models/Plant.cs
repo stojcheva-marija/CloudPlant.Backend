@@ -22,6 +22,8 @@ namespace CloudPlant.Domain.Domain_models
         public Plant()
         {
             Measurements = new List<Measurement>();
+            LastWatering = DateTime.UtcNow;
+            NextWatering = DateTime.UtcNow;
         }
     }
 }
