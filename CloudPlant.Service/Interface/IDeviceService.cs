@@ -13,9 +13,9 @@ namespace CloudPlant.Service.Interface
         Device CreateDevice(String code);
         DeviceDTO GetDeviceById(int id);
         DeviceDTO GetDeviceByCode(string code);
-        Device AddUserToDevice(int deviceId, int userId);
+        Device AddUserToDevice(int deviceId, string username);
         List<PlantWithPlantTypeDTO> ListPlants(string code);
         DeviceDTO EditDevice(DeviceDTO deviceDTO);
-        void DeleteDevice(DeviceDTO deviceDTO);
+        void DeleteDevice(int id);
     }
 }

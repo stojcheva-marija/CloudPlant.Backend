@@ -17,17 +17,22 @@ namespace CloudPlant.Controllers
             this._userService = userService;
         }
 
-        [HttpPost]
-        public IActionResult CreateUser(CloudPlantUser user)
+        [HttpGet("GetUserByUsername")]
+        public IActionResult GetUserByUsername(string username) 
         {
-            var newUser = _userService.CreateUser(user);
-            return CreatedAtRoute("GetUser", new { newUser.Id }, newUser);
+            return Ok(_userService.GetUserByUsername(username));
         }
 
-        [HttpGet("{id}", Name = "GetUser")]
-        public IActionResult GetPlant(int id)
+        [HttpGet("GetDevices")]
+        public IActionResult GetDevices(string username)
         {
-            return Ok(_userService.GetUser(id));
+            return Ok(_userService.GetDevices(username));
+        }
+
+        [HttpGet("GetPlants")]
+        public IActionResult GetPlants(string username)
+        {
+            return Ok(_userService.GetPlants(username));
         }
     }
 }

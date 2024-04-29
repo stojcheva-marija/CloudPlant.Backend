@@ -24,7 +24,7 @@ namespace CloudPlant.Service.Implementation
             _userRepository = userRepository;
         }
 
-        public Device AddUserToDevice(int deviceId, int userId)
+        public Device AddUserToDevice(int deviceId, string username)
         {
             var device = _deviceRepository.GetById(deviceId);
 
@@ -33,7 +33,7 @@ namespace CloudPlant.Service.Implementation
                 throw new Exception("Device not found");
             }
 
-            var user = _userRepository.GetById(userId);
+            var user = _userRepository.GetByUsername(username);
 
             if (user == null)
             {
@@ -98,7 +98,7 @@ namespace CloudPlant.Service.Implementation
             {
                 throw new Exception("Device not found");
             }
-            var user = _userRepository.GetById(deviceDTO.UserId);
+            var user = _userRepository.GetByUsername(deviceDTO.Username);
             if (user == null)
             {
                 throw new Exception("User not found");
@@ -113,9 +113,9 @@ namespace CloudPlant.Service.Implementation
 
         }
 
-        public void DeleteDevice(DeviceDTO deviceDTO)
+        public void DeleteDevice(int id)
         {
-            var device = _deviceRepository.GetById(deviceDTO.Id);
+            var device = _deviceRepository.GetById(id);
             if (device == null)
             {
                 throw new Exception("Device not found");

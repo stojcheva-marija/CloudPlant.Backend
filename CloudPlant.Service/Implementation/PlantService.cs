@@ -44,9 +44,9 @@ namespace CloudPlant.Service.Implementation
             return (PlantWithPlantTypeDTO) plant;
         }
 
-        public void DeletePlant(PlantDTO plantDTO)
+        public void DeletePlant(int id)
         {
-            var plant = _plantRepository.GetById(plantDTO.Id);
+            var plant = _plantRepository.GetById(id);
             if (plant == null)
             {
                 throw new Exception("Plant not found");

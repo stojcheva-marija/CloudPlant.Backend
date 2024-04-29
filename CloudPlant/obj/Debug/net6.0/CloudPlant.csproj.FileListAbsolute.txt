@@ -69,3 +69,7 @@ C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant\bin\Debug\net6.0\Human
 C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant\bin\Debug\net6.0\CloudPlant.Service.dll
 C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant\bin\Debug\net6.0\CloudPlant.Service.pdb
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

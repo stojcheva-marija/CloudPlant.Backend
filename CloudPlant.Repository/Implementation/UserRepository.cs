@@ -36,5 +36,10 @@ namespace CloudPlant.Repository.Implementation
         {
             return entities.Where(u => u.Id == id).FirstOrDefault();
         }
+
+        public CloudPlantUser GetByUsername(string username)
+        {
+            return entities.Where(u => u.Username == username).Include(u => u.Devices).FirstOrDefault();
+        }
     }
 }

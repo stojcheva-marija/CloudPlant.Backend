@@ -24,9 +24,9 @@ namespace CloudPlant.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeletePlant(PlantDTO plantDTO)
+        public IActionResult DeletePlant(int id)
         {
-            _plantService.DeletePlant(plantDTO);
+            _plantService.DeletePlant(id);
             return Ok();
         }
 

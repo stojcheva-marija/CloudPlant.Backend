@@ -13,6 +13,6 @@ namespace CloudPlant.Service.Interface
         PlantWithPlantTypeDTO GetPlant(int id);
         PlantWithPlantTypeDTO EditPlant(PlantDTO plantDTO);
         PlantWithPlantTypeDTO CreatePlant(PlantCreationDTO plantCreationDTO);
-        void DeletePlant(PlantDTO plantDTO);
+        void DeletePlant(int id);
     }
 }

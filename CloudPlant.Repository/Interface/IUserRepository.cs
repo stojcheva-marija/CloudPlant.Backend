@@ -12,5 +12,6 @@ namespace CloudPlant.Repository.Interface
     {
         void Insert(CloudPlantUser entity);
         CloudPlantUser GetById(int id);
+        CloudPlantUser GetByUsername(string username);
     }
 }

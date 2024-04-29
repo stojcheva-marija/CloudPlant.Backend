@@ -1,0 +1,17 @@
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\bin\Release\net6.0\CloudPlant.Service.deps.json
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\bin\Release\net6.0\CloudPlant.Service.dll
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\bin\Release\net6.0\CloudPlant.Service.pdb
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\bin\Release\net6.0\CloudPlant.Domain.dll
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\bin\Release\net6.0\CloudPlant.Repository.dll
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\bin\Release\net6.0\CloudPlant.Domain.pdb
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\bin\Release\net6.0\CloudPlant.Repository.pdb
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\CloudPlant.Service.csproj.AssemblyReference.cache
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\CloudPlant.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\CloudPlant.Service.AssemblyInfoInputs.cache
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\CloudPlant.Service.AssemblyInfo.cs
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\CloudPlant.Service.csproj.CoreCompileInputs.cache
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\CloudPlant.Service.csproj.CopyComplete
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\CloudPlant.Service.dll
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\refint\CloudPlant.Service.dll
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\CloudPlant.Service.pdb
+C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Service\obj\Release\net6.0\ref\CloudPlant.Service.dll

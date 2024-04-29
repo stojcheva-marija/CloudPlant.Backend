@@ -2,6 +2,7 @@
 using CloudPlant.Domain.DTO;
 using CloudPlant.Service.Implementation;
 using CloudPlant.Service.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CloudPlant.Controllers
@@ -26,10 +27,10 @@ namespace CloudPlant.Controllers
         }
 
         [HttpPost("AddUserToDevice")]
-        public IActionResult AddUserToDevice(int deviceId, int userId)
+        public IActionResult AddUserToDevice(int deviceId, string username)
         {
 
-            Device device = _deviceService.AddUserToDevice(deviceId, userId);
+            Device device = _deviceService.AddUserToDevice(deviceId, username);
             return Ok(device);
         }
 
@@ -52,9 +53,9 @@ namespace CloudPlant.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteDevice(DeviceDTO deviceDTO)
+        public IActionResult DeleteDevice(int id)
         {
-            _deviceService.DeleteDevice(deviceDTO);
+            _deviceService.DeleteDevice(id);
             return Ok();
         }
 
