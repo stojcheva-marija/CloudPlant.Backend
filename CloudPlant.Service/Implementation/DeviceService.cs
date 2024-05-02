@@ -24,7 +24,7 @@ namespace CloudPlant.Service.Implementation
             _userRepository = userRepository;
         }
 
-        public Device AddUserToDevice(int deviceId, string username)
+        public DeviceDTO AddUserToDevice(int deviceId, string username)
         {
             var device = _deviceRepository.GetById(deviceId);
 
@@ -44,7 +44,7 @@ namespace CloudPlant.Service.Implementation
 
             _deviceRepository.Update(device);
 
-            return device;
+            return (DeviceDTO)device;
         }
 
         public Device CreateDevice(string code)

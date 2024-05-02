@@ -30,8 +30,8 @@ namespace CloudPlant.Controllers
         public IActionResult AddUserToDevice(int deviceId, string username)
         {
 
-            Device device = _deviceService.AddUserToDevice(deviceId, username);
-            return Ok(device);
+            DeviceDTO deviceDTO = _deviceService.AddUserToDevice(deviceId, username);
+            return Ok(deviceDTO);
         }
 
         [HttpGet("GetDeviceById")]
