@@ -3,7 +3,7 @@ using CloudPlant.Domain.DTO;
 using CloudPlant.Service.Interface;
 using CloudPlant.Repository.Interface;
 using CloudPlant.Repository.Implementation;
-
+using CloudPlant.Domain.CustomExceptions;
 
 namespace CloudPlant.Service.Implementation
 {
@@ -25,12 +25,13 @@ namespace CloudPlant.Service.Implementation
             var device = _deviceRepository.GetById(plantCreationDTO.DeviceId);
             if (device == null)
             {
-                throw new Exception("Device not found");
+                throw new DeviceNotFoundException($"Device with id {plantCreationDTO.DeviceId} not found");
             }
             var plantType = _plantTypeRepository.GetById(plantCreationDTO.PlantTypeId);
             if (plantType == null)
             {
-                throw new Exception("Plant type not found");
+                throw new PlantTypeNotFoundException($"Plant type with id {plantCreationDTO.PlantTypeId} not found");
+
             }
 
             var plant = new Plant
@@ -49,7 +50,7 @@ namespace CloudPlant.Service.Implementation
             var plant = _plantRepository.GetById(id);
             if (plant == null)
             {
-                throw new Exception("Plant not found");
+                throw new PlantNotFoundException($"Plant with id {id} not found");
             }
             _plantRepository.Delete(plant);
         }
@@ -59,17 +60,18 @@ namespace CloudPlant.Service.Implementation
             var plant = _plantRepository.GetById(plantDTO.Id);
             if (plant == null)
             {
-                throw new Exception("Plant not found");
+                throw new PlantNotFoundException($"Plant with id {plantDTO.Id} not found");
             }
             var device = _deviceRepository.GetById(plantDTO.DeviceId);
             if (device == null)
             {
-                throw new Exception("Device not found");
+                throw new DeviceNotFoundException($"Device with id {plantDTO.DeviceId} not found");
             }
             var plantType = _plantTypeRepository.GetById(plantDTO.PlantTypeId);
             if (plantType == null)
             {
-                throw new Exception("Plant Type not found");
+                throw new PlantTypeNotFoundException($"Plant type with id {plantDTO.PlantTypeId} not found");
+
             }
 
             plant.Title = plantDTO.Title;
@@ -87,7 +89,7 @@ namespace CloudPlant.Service.Implementation
             Plant plant = _plantRepository.GetById(id);
             if (plant == null)
             {
-                throw new Exception("Plant not found");
+                throw new PlantNotFoundException($"Plant with id {id} not found");
             }
             return (PlantWithPlantTypeDTO) plant;
         }

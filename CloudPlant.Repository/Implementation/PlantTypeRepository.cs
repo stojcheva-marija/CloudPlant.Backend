@@ -36,5 +36,10 @@ namespace CloudPlant.Repository.Implementation
         {
             return entities.Where(pt => pt.Id == id).FirstOrDefault();
         }
+
+        public List<PlantType> GetPlantTypes()
+        {
+            return entities.ToList();
+        }
     }
 }

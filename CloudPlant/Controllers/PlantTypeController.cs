@@ -1,4 +1,5 @@
 ﻿using CloudPlant.Domain.Domain_models;
+using CloudPlant.Service.Implementation;
 using CloudPlant.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,12 @@ namespace CloudPlant.Controllers
         {
             var newPlantType = _plantTypeService.CreatePlantType(plantType);
             return Ok(newPlantType);
+        }
+
+        [HttpGet("GetAllPlantTypes")]
+        public IActionResult GetAllPlantTypes()
+        {
+            return Ok(_plantTypeService.GetAllPlantTypes());
         }
     }
 }

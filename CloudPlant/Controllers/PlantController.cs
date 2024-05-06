@@ -1,4 +1,5 @@
-﻿using CloudPlant.Domain.Domain_models;
+﻿using CloudPlant.Domain.CustomExceptions;
+using CloudPlant.Domain.Domain_models;
 using CloudPlant.Domain.DTO;
 using CloudPlant.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
@@ -19,27 +20,67 @@ namespace CloudPlant.Controllers
         [HttpPost]
         public IActionResult CreatePlant(PlantCreationDTO plantCreationDTO)
         {
-            var plant= _plantService.CreatePlant(plantCreationDTO);
-            return CreatedAtRoute("GetPlant", new { plant.Id }, plant);
+            try
+            {
+                var plant = _plantService.CreatePlant(plantCreationDTO);
+                return CreatedAtRoute("GetPlant", new { plant.Id }, plant);
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
+            catch (PlantTypeNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpDelete]
         public IActionResult DeletePlant(int id)
         {
-            _plantService.DeletePlant(id);
-            return Ok();
+            try
+            {
+                _plantService.DeletePlant(id);
+                return Ok();
+            }
+            catch (PlantNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpPut]
         public IActionResult EditPlant(PlantDTO plantDTO)
         {
-            return Ok(_plantService.EditPlant(plantDTO));
+            try
+            {
+                return Ok(_plantService.EditPlant(plantDTO));
+            }
+            catch (PlantNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
+            catch (PlantTypeNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpGet("{id}", Name = "GetPlant")]
         public IActionResult GetPlant(int id)
         {
-            return Ok(_plantService.GetPlant(id)); 
+            try
+            {
+                return Ok(_plantService.GetPlant(id));
+            }
+            catch (PlantNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CloudPlant.Domain.Domain_models;
+﻿using CloudPlant.Domain.CustomExceptions;
+using CloudPlant.Domain.Domain_models;
 using CloudPlant.Domain.DTO;
 using CloudPlant.Repository.Interface;
 using CloudPlant.Service.Interface;
@@ -20,7 +21,7 @@ namespace CloudPlant.Service.Implementation
             var device = _deviceRepository.GetById(measurements.DeviceID);
             if (device == null)
             {
-                throw new Exception("Device not found");
+                throw new DeviceNotFoundException($"Device with id {measurements.DeviceID} not found");
             }
             var plants = device.Plants;
 

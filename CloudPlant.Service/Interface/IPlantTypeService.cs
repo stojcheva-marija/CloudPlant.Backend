@@ -11,5 +11,6 @@ namespace CloudPlant.Service.Interface
     public interface IPlantTypeService
     {
         PlantType CreatePlantType(PlantType plantType);
+        List<PlantType> GetAllPlantTypes();
     }
 }

@@ -12,5 +12,6 @@ namespace CloudPlant.Repository.Interface
     {
         void Insert(PlantType entity);
         PlantType GetById(int id);
+        List<PlantType> GetPlantTypes();
     }
 }

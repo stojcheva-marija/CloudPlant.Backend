@@ -1,4 +1,5 @@
-﻿using CloudPlant.Domain.Domain_models;
+﻿using CloudPlant.Domain.CustomExceptions;
+using CloudPlant.Domain.Domain_models;
 using CloudPlant.Domain.DTO;
 using CloudPlant.Repository.Implementation;
 using CloudPlant.Repository.Interface;
@@ -30,14 +31,15 @@ namespace CloudPlant.Service.Implementation
 
             if (device == null)
             {
-                throw new Exception("Device not found");
+                throw new DeviceNotFoundException($"Device with id {deviceId} not found");
             }
 
             var user = _userRepository.GetByUsername(username);
 
             if (user == null)
             {
-                throw new Exception("User not found");
+                throw new UserNotFoundException($"User with username {username} not found");
+
             }
 
             device.User = user;
@@ -47,11 +49,20 @@ namespace CloudPlant.Service.Implementation
             return (DeviceDTO)device;
         }
 
-        public Device CreateDevice(string code)
+        public Device CreateDevice(string code, string name)
         {
-            var device = new Device
+
+            var device = _deviceRepository.GetByCode(code);
+
+            if (device != null)
+            {
+                throw new InvalidDeviceCodeException("Device with that code already exists!");
+            }
+
+            device = new Device
             {
                 Code = code,
+                Name = name
             };
 
             _deviceRepository.Insert(device);
@@ -64,9 +75,9 @@ namespace CloudPlant.Service.Implementation
                 var device = _deviceRepository.GetById(id);
                 if (device == null)
                 {
-                    throw new Exception("Device not found");
+                    throw new DeviceNotFoundException($"Device with id {id} not found");
                 }
-                return (DeviceDTO)device;
+            return (DeviceDTO)device;
         }
 
         public DeviceDTO GetDeviceByCode(string code)
@@ -74,7 +85,8 @@ namespace CloudPlant.Service.Implementation
             var device = _deviceRepository.GetByCode(code);
             if (device == null)
             {
-                throw new Exception("Device not found");
+                throw new DeviceNotFoundException($"Device with code {code} not found");
+
             }
             return (DeviceDTO)device;
         }
@@ -84,7 +96,8 @@ namespace CloudPlant.Service.Implementation
             Device device = _deviceRepository.GetByCode(code);
             if (device == null)
             {
-                throw new Exception("Device not found");
+                throw new DeviceNotFoundException($"Device with code {code} not found");
+
             }
             List<PlantWithPlantTypeDTO> plantDTOs = device.Plants.Select(plant => (PlantWithPlantTypeDTO)plant).ToList();
 
@@ -96,12 +109,13 @@ namespace CloudPlant.Service.Implementation
             var device = _deviceRepository.GetById(deviceDTO.Id);
             if (device == null)
             {
-                throw new Exception("Device not found");
+                throw new DeviceNotFoundException($"Device with id {deviceDTO.Id} not found");
+
             }
             var user = _userRepository.GetByUsername(deviceDTO.Username);
             if (user == null)
             {
-                throw new Exception("User not found");
+                throw new UserNotFoundException($"User with username {deviceDTO.Username} not found");
             }
 
             device.Code = deviceDTO.Code;
@@ -118,7 +132,7 @@ namespace CloudPlant.Service.Implementation
             var device = _deviceRepository.GetById(id);
             if (device == null)
             {
-                throw new Exception("Device not found");
+                throw new DeviceNotFoundException($"Device with id {id} not found");
             }
             _deviceRepository.Delete(device);
         }

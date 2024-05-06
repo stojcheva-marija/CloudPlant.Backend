@@ -11,6 +11,7 @@ namespace CloudPlant.Domain.Domain_models
     public class Device : BaseEntity
     {
         public string Code { get; set; }
+        public string Name { get; set; }
         public string? MACAddress { get; set; }
         [ForeignKey("CloudPlantUserId")]
         public virtual CloudPlantUser? User { get; set; } 

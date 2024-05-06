@@ -1,4 +1,5 @@
-﻿using CloudPlant.Domain.Domain_models;
+﻿using CloudPlant.Domain.CustomExceptions;
+using CloudPlant.Domain.Domain_models;
 using CloudPlant.Domain.DTO;
 using CloudPlant.Service.Interface;
 using Microsoft.AspNetCore.Mvc;
@@ -19,8 +20,19 @@ namespace CloudPlant.Controllers
         [HttpPost]
         public IActionResult CreateMeasurement(MeasurementsCreationDTO measurements)
         {
-            var newMeasurements = _measurementService.CreateMeasurements(measurements);
-            return Ok(newMeasurements);
+            try
+            {
+                var newMeasurements = _measurementService.CreateMeasurements(measurements);
+                return Ok(newMeasurements);
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
+            catch (InvalidOperationException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
     }
 }

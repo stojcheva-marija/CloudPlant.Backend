@@ -26,5 +26,10 @@ namespace CloudPlant.Service.Implementation
 
             return plantType;
         }
+
+        public List<PlantType> GetAllPlantTypes()
+        {
+            return _plantTypeRepository.GetPlantTypes();
+        }
     }
 }

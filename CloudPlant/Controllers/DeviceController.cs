@@ -1,4 +1,5 @@
-﻿using CloudPlant.Domain.Domain_models;
+﻿using CloudPlant.Domain.CustomExceptions;
+using CloudPlant.Domain.Domain_models;
 using CloudPlant.Domain.DTO;
 using CloudPlant.Service.Implementation;
 using CloudPlant.Service.Interface;
@@ -19,50 +20,105 @@ namespace CloudPlant.Controllers
         }
 
         [HttpPost("CreateDevice")]
-        public IActionResult CreateDevice(String code)
+        public IActionResult CreateDevice(string code, string name)
         {
-
-            Device newDevice = _deviceService.CreateDevice(code);
-            return Ok(newDevice);
+            try
+            {
+                Device newDevice = _deviceService.CreateDevice(code, name);
+                return Ok(newDevice);
+            }
+            catch (InvalidDeviceCodeException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpPost("AddUserToDevice")]
         public IActionResult AddUserToDevice(int deviceId, string username)
         {
-
-            DeviceDTO deviceDTO = _deviceService.AddUserToDevice(deviceId, username);
-            return Ok(deviceDTO);
+            try
+            {
+                DeviceDTO deviceDTO = _deviceService.AddUserToDevice(deviceId, username);
+                return Ok(deviceDTO);
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
+            catch (UserNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpGet("GetDeviceById")]
         public IActionResult GetDeviceById(int id)
         {
-            return Ok(_deviceService.GetDeviceById(id));
+            try
+            {
+                return Ok(_deviceService.GetDeviceById(id));
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpGet("GetDeviceByCode")]
         public IActionResult GetDeviceByCode(string code)
         {
-            return Ok(_deviceService.GetDeviceByCode(code));
+            try
+            {
+                return Ok(_deviceService.GetDeviceByCode(code));
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpGet("ListPlantsByDevice")]
         public IActionResult ListPlantsByDevice(string code)
         {
-            return Ok(_deviceService.ListPlants(code));
+            try
+            {
+                return Ok(_deviceService.ListPlants(code));
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpDelete]
         public IActionResult DeleteDevice(int id)
         {
-            _deviceService.DeleteDevice(id);
-            return Ok();
+            try
+            {
+                _deviceService.DeleteDevice(id);
+                return Ok();
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
 
         [HttpPut]
         public IActionResult EditDevice(DeviceDTO deviceDTO)
         {
-            return Ok(_deviceService.EditDevice(deviceDTO));
+            try
+            {
+                return Ok(_deviceService.EditDevice(deviceDTO));
+            }
+            catch (DeviceNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
+            catch (UserNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
         }
     }
 }
