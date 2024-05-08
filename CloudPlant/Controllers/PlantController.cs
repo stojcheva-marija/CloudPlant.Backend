@@ -29,6 +29,10 @@ namespace CloudPlant.Controllers
             {
                 return StatusCode(409, e.Message);
             }
+            catch (InvalidNumberOfPlantsException e)
+            {
+                return StatusCode(409, e.Message);
+            }
             catch (PlantTypeNotFoundException e)
             {
                 return StatusCode(409, e.Message);
@@ -70,12 +74,39 @@ namespace CloudPlant.Controllers
             }
         }
 
+
+        [HttpPut("UpdateLastWatering")]
+        public IActionResult UpdateLastWatering(int plantId, DateTime lastWatering)
+        {
+            try
+            {
+                return Ok(_plantService.UpdateLastWatering(plantId, lastWatering));
+            }
+            catch (PlantNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
+        }
+
         [HttpGet("{id}", Name = "GetPlant")]
         public IActionResult GetPlant(int id)
         {
             try
             {
                 return Ok(_plantService.GetPlant(id));
+            }
+            catch (PlantNotFoundException e)
+            {
+                return StatusCode(409, e.Message);
+            }
+        }
+
+        [HttpGet("GetMeasurements")]
+        public IActionResult GetMeasurements(int id)
+        {
+            try
+            {
+                return Ok(_plantService.GetMeasurements(id));
             }
             catch (PlantNotFoundException e)
             {

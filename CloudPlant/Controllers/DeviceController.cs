@@ -34,11 +34,11 @@ namespace CloudPlant.Controllers
         }
 
         [HttpPost("AddUserToDevice")]
-        public IActionResult AddUserToDevice(int deviceId, string username)
+        public IActionResult AddUserToDevice(string code, string username)
         {
             try
             {
-                DeviceDTO deviceDTO = _deviceService.AddUserToDevice(deviceId, username);
+                DeviceDTO deviceDTO = _deviceService.AddUserToDevice(code, username);
                 return Ok(deviceDTO);
             }
             catch (DeviceNotFoundException e)

@@ -27,6 +27,12 @@ namespace CloudPlant.Service.Implementation
             {
                 throw new DeviceNotFoundException($"Device with id {plantCreationDTO.DeviceId} not found");
             }
+
+            if (device.Plants.Count == 3)
+            {
+                throw new InvalidNumberOfPlantsException("You have already entered 3 plants, which is the maximum per device");
+            }
+
             var plantType = _plantTypeRepository.GetById(plantCreationDTO.PlantTypeId);
             if (plantType == null)
             {
@@ -75,13 +81,31 @@ namespace CloudPlant.Service.Implementation
             }
 
             plant.Title = plantDTO.Title;
-            plant.NextWatering = plantDTO.NextWatering;
             plant.LastWatering = plantDTO.LastWatering;
             plant.PlantType = plantType;
             plant.Device = device;
 
             _plantRepository.Update(plant);
             return (PlantWithPlantTypeDTO) plant;
+        }
+
+        public List<MeasurementDTO> GetMeasurements(int id)
+        {
+            Plant plant = _plantRepository.GetById(id);
+
+            if (plant == null)
+            {
+                throw new PlantNotFoundException($"Plant with id {id} not found");
+            }
+
+            // SMENI PO DATE DESCENDING KOA KE DODADESH VO BAZA
+            List<MeasurementDTO> measurementDTOs = plant.Measurements
+                .OrderByDescending(measurement => measurement.Id)
+                .Take(10)
+                .Select(measurement => (MeasurementDTO)measurement)
+                .ToList();
+            
+            return measurementDTOs;
         }
 
         public PlantWithPlantTypeDTO GetPlant(int id)
@@ -92,6 +116,21 @@ namespace CloudPlant.Service.Implementation
                 throw new PlantNotFoundException($"Plant with id {id} not found");
             }
             return (PlantWithPlantTypeDTO) plant;
+        }
+
+        public PlantWithPlantTypeDTO UpdateLastWatering(int plantId, DateTime lastWatering)
+        {
+            Plant plant = _plantRepository.GetById(plantId);
+
+            if (plant == null)
+            {
+                throw new PlantNotFoundException($"Plant with id {plantId} not found");
+            }
+
+            plant.LastWatering = lastWatering;
+
+            _plantRepository.Update(plant);
+            return (PlantWithPlantTypeDTO)plant;
         }
     }
 }

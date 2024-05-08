@@ -10,6 +10,7 @@ namespace CloudPlant.Domain.Domain_models
 {
     public class Measurement : BaseEntity
     {
+       //ADD LIGHT INTENSITY AND DATE
        public float SoilMeasurement { get; set; }
        public float TemperatureMeasurement { get; set; }
        public float HumidityMeasurement { get; set; }

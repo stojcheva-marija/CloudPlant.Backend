@@ -29,7 +29,7 @@ namespace CloudPlant.Controllers
             {
                 return StatusCode(409, e.Message);
             }
-            catch (InvalidOperationException e)
+            catch (InvalidNumberOfPlantsException e)
             {
                 return StatusCode(409, e.Message);
             }

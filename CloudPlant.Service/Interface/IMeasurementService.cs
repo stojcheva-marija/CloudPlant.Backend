@@ -10,6 +10,6 @@ namespace CloudPlant.Service.Interface
 {
     public interface IMeasurementService
     {   
-        List<Measurement> CreateMeasurements(MeasurementsCreationDTO measurements);
+        List<MeasurementDTO> CreateMeasurements(MeasurementsCreationDTO measurements);
     }
 }

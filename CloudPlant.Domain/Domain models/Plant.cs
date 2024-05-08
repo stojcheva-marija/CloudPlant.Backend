@@ -11,6 +11,7 @@ namespace CloudPlant.Domain.Domain_models
 {
     public class Plant : BaseEntity
     {
+        //DELETE NEXTWATERING
         public String Title { get; set; }
         public DateTime LastWatering { get; set; }
         public DateTime NextWatering { get; set; }

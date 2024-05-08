@@ -12,14 +12,12 @@ namespace CloudPlant.Domain.DTO
         public int Id { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
-        public string MACAddress { get; set; }
         public string Username{ get; set; }
 
         public static explicit operator DeviceDTO(Device device) => new DeviceDTO
         {
             Id = device.Id,
             Username = device.User.Username,
-            MACAddress = device.MACAddress,
             Code = device.Code,
             Name = device.Name
         };

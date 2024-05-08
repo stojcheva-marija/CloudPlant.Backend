@@ -25,13 +25,13 @@ namespace CloudPlant.Service.Implementation
             _userRepository = userRepository;
         }
 
-        public DeviceDTO AddUserToDevice(int deviceId, string username)
+        public DeviceDTO AddUserToDevice(string code, string username)
         {
-            var device = _deviceRepository.GetById(deviceId);
+            var device = _deviceRepository.GetByCode(code);
 
             if (device == null)
             {
-                throw new DeviceNotFoundException($"Device with id {deviceId} not found");
+                throw new DeviceNotFoundException($"Device with code {code} not found");
             }
 
             var user = _userRepository.GetByUsername(username);
@@ -119,8 +119,8 @@ namespace CloudPlant.Service.Implementation
             }
 
             device.Code = deviceDTO.Code;
-            device.MACAddress = deviceDTO.MACAddress;
             device.User = user;
+            device.Name = deviceDTO.Name;
 
             _deviceRepository.Update(device);
             return (DeviceDTO)device;

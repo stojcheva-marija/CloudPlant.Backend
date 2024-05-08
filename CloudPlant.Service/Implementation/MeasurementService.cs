@@ -16,8 +16,8 @@ namespace CloudPlant.Service.Implementation
             this._deviceRepository = deviceRepository;
         }
 
-        public List<Measurement> CreateMeasurements(MeasurementsCreationDTO measurements)
-        {
+        public List<MeasurementDTO> CreateMeasurements(MeasurementsCreationDTO measurements)
+        {   //ADD LIGHT INTENSITY AND DATE
             var device = _deviceRepository.GetById(measurements.DeviceID);
             if (device == null)
             {
@@ -29,7 +29,7 @@ namespace CloudPlant.Service.Implementation
 
             if (plants.Count < 3)
             {
-                throw new InvalidOperationException("The device does not have enough plants for all measurements.");
+                throw new InvalidNumberOfPlantsException("The device does not have enough plants for all measurements.");
             }
 
             var measurement1 = new Measurement
@@ -62,7 +62,9 @@ namespace CloudPlant.Service.Implementation
             _measurementRepository.Insert(measurement3);
             measurementList.Add(measurement3);
 
-            return measurementList;
+            List<MeasurementDTO> measurementDTOs = measurementList.Select(measurement => (MeasurementDTO)measurement).ToList();
+
+            return measurementDTOs;
         }
     }
 }

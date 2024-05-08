@@ -14,5 +14,7 @@ namespace CloudPlant.Service.Interface
         PlantWithPlantTypeDTO EditPlant(PlantDTO plantDTO);
         PlantWithPlantTypeDTO CreatePlant(PlantCreationDTO plantCreationDTO);
         void DeletePlant(int id);
+        PlantWithPlantTypeDTO UpdateLastWatering(int plantId, DateTime lastWatering);
+        List<MeasurementDTO> GetMeasurements(int id);
     }
-}
+} 
