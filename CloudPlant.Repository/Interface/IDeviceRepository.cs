@@ -14,5 +14,6 @@ namespace CloudPlant.Repository.Interface
         void Delete(Device entity);
         Device GetById(int id);
         Device GetByCode(string code);
+        List<Device> GetAll();
     }
 }

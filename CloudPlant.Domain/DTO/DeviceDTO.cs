@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CloudPlant.Domain.DTO
 {
-    public class DeviceDTO
+    public class DeviceDTO 
     {
         public int Id { get; set; }
         public string Code { get; set; }

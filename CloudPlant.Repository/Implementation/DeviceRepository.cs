@@ -62,5 +62,10 @@ namespace CloudPlant.Repository.Implementation
             entities.Remove(entity);
             context.SaveChanges();
         }
+
+        public List<Device> GetAll()
+        {
+            return entities.ToList();
+        }
     }
 }

@@ -18,10 +18,10 @@ namespace CloudPlant.Service.Implementation
 
         public List<MeasurementDTO> CreateMeasurements(MeasurementsCreationDTO measurements)
         {   //ADD LIGHT INTENSITY AND DATE
-            var device = _deviceRepository.GetById(measurements.DeviceID);
+            var device = _deviceRepository.GetByCode(measurements.DeviceCode);
             if (device == null)
             {
-                throw new DeviceNotFoundException($"Device with id {measurements.DeviceID} not found");
+                throw new DeviceNotFoundException($"Device with code {measurements.DeviceCode} not found");
             }
             var plants = device.Plants;
 

@@ -25,31 +25,7 @@ namespace CloudPlant.Service.Implementation
             _userRepository = userRepository;
         }
 
-        public DeviceDTO AddUserToDevice(string code, string username)
-        {
-            var device = _deviceRepository.GetByCode(code);
-
-            if (device == null)
-            {
-                throw new DeviceNotFoundException($"Device with code {code} not found");
-            }
-
-            var user = _userRepository.GetByUsername(username);
-
-            if (user == null)
-            {
-                throw new UserNotFoundException($"User with username {username} not found");
-
-            }
-
-            device.User = user;
-
-            _deviceRepository.Update(device);
-
-            return (DeviceDTO)device;
-        }
-
-        public Device CreateDevice(string code, string name)
+        public Device CreateDevice(string code)
         {
 
             var device = _deviceRepository.GetByCode(code);
@@ -61,8 +37,7 @@ namespace CloudPlant.Service.Implementation
 
             device = new Device
             {
-                Code = code,
-                Name = name
+                Code = code
             };
 
             _deviceRepository.Insert(device);
@@ -118,7 +93,6 @@ namespace CloudPlant.Service.Implementation
                 throw new UserNotFoundException($"User with username {deviceDTO.Username} not found");
             }
 
-            device.Code = deviceDTO.Code;
             device.User = user;
             device.Name = deviceDTO.Name;
 
@@ -136,6 +110,22 @@ namespace CloudPlant.Service.Implementation
             }
             _deviceRepository.Delete(device);
         }
-    
+
+        public bool IsCreated(string code)
+        {
+            var device = _deviceRepository.GetByCode(code);
+            if (device == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public List<InitialDeviceDTO> GetAllDevices()
+        {
+            return _deviceRepository.GetAll()
+                .Select(device => (InitialDeviceDTO)device)
+                .ToList();
+        }
     }
 }

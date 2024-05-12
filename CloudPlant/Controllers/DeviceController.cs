@@ -20,32 +20,14 @@ namespace CloudPlant.Controllers
         }
 
         [HttpPost("CreateDevice")]
-        public IActionResult CreateDevice(string code, string name)
+        public IActionResult CreateDevice(string code)
         {
             try
             {
-                Device newDevice = _deviceService.CreateDevice(code, name);
+                Device newDevice = _deviceService.CreateDevice(code);
                 return Ok(newDevice);
             }
             catch (InvalidDeviceCodeException e)
-            {
-                return StatusCode(409, e.Message);
-            }
-        }
-
-        [HttpPost("AddUserToDevice")]
-        public IActionResult AddUserToDevice(string code, string username)
-        {
-            try
-            {
-                DeviceDTO deviceDTO = _deviceService.AddUserToDevice(code, username);
-                return Ok(deviceDTO);
-            }
-            catch (DeviceNotFoundException e)
-            {
-                return StatusCode(409, e.Message);
-            }
-            catch (UserNotFoundException e)
             {
                 return StatusCode(409, e.Message);
             }
@@ -89,6 +71,18 @@ namespace CloudPlant.Controllers
                 return StatusCode(409, e.Message);
             }
         }
+        [HttpGet("GetAllDevices")]
+        public IActionResult GetAllDevices()
+        {
+            return Ok(_deviceService.GetAllDevices());
+        }
+
+        [HttpGet("IsCreated")]
+        public IActionResult IsCreated(string code)
+        {
+            return Ok(_deviceService.IsCreated(code));
+        }
+
 
         [HttpDelete]
         public IActionResult DeleteDevice(int id)
