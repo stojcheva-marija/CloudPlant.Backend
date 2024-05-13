@@ -17,7 +17,7 @@ namespace CloudPlant.Service.Implementation
         }
 
         public List<MeasurementDTO> CreateMeasurements(MeasurementsCreationDTO measurements)
-        {   //ADD LIGHT INTENSITY AND DATE
+        {   
             var device = _deviceRepository.GetByCode(measurements.DeviceCode);
             if (device == null)
             {
@@ -32,11 +32,15 @@ namespace CloudPlant.Service.Implementation
                 throw new InvalidNumberOfPlantsException("The device does not have enough plants for all measurements.");
             }
 
+            var date = DateTime.Now;
+
             var measurement1 = new Measurement
             {
+                LightIntensity = measurements.LightIntensity,
                 SoilMeasurement = measurements.SensorMoisture1,
                 HumidityMeasurement = measurements.Humidity,
                 TemperatureMeasurement = measurements.Temperature,
+                Date = date,
                 Plant = plants[0]
             };
             _measurementRepository.Insert(measurement1);
@@ -44,9 +48,11 @@ namespace CloudPlant.Service.Implementation
 
             var measurement2 = new Measurement
             {
+                LightIntensity = measurements.LightIntensity,
                 SoilMeasurement = measurements.SensorMoisture2,
                 HumidityMeasurement = measurements.Humidity,
                 TemperatureMeasurement = measurements.Temperature,
+                Date = date,
                 Plant = plants[1]
             };
             _measurementRepository.Insert(measurement2);
@@ -54,9 +60,11 @@ namespace CloudPlant.Service.Implementation
 
             var measurement3 = new Measurement
             {
+                LightIntensity = measurements.LightIntensity,
                 SoilMeasurement = measurements.SensorMoisture3,
                 HumidityMeasurement = measurements.Humidity,
                 TemperatureMeasurement = measurements.Temperature,
+                Date = date,
                 Plant = plants[2]
             };
             _measurementRepository.Insert(measurement3);

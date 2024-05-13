@@ -98,9 +98,8 @@ namespace CloudPlant.Service.Implementation
                 throw new PlantNotFoundException($"Plant with id {id} not found");
             }
 
-            // SMENI PO DATE DESCENDING KOA KE DODADESH VO BAZA
             List<MeasurementDTO> measurementDTOs = plant.Measurements
-                .OrderByDescending(measurement => measurement.Id)
+                .OrderByDescending(measurement => measurement.Date)
                 .Take(10)
                 .Select(measurement => (MeasurementDTO)measurement)
                 .ToList();

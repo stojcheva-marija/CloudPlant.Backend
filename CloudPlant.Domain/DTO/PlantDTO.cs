@@ -11,7 +11,7 @@ namespace CloudPlant.Domain.DTO
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public DateTime LastWatering { get; set; }
+        public DateTime? LastWatering { get; set; }
         public int PlantTypeId { get; set; }
         public int DeviceId { get; set; }
 
