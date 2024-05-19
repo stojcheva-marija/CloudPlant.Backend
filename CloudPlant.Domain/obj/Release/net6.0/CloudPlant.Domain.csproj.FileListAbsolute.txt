@@ -10,3 +10,15 @@ C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Domain\obj\Release\net
 C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Domain\obj\Release\net6.0\refint\CloudPlant.Domain.dll
 C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Domain\obj\Release\net6.0\CloudPlant.Domain.pdb
 C:\Users\Marija\Desktop\Cloud Plant\CloudPlant\CloudPlant.Domain\obj\Release\net6.0\ref\CloudPlant.Domain.dll
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\bin\Release\net6.0\CloudPlant.Domain.deps.json
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\bin\Release\net6.0\CloudPlant.Domain.dll
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\bin\Release\net6.0\CloudPlant.Domain.pdb
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\CloudPlant.Domain.csproj.AssemblyReference.cache
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\CloudPlant.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\CloudPlant.Domain.AssemblyInfoInputs.cache
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\CloudPlant.Domain.AssemblyInfo.cs
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\CloudPlant.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\CloudPlant.Domain.dll
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\refint\CloudPlant.Domain.dll
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\CloudPlant.Domain.pdb
+C:\Users\Asus\Desktop\IKT proekt\cloudbackend\CloudPlant.Backend\CloudPlant.Domain\obj\Release\net6.0\ref\CloudPlant.Domain.dll

@@ -2,19 +2,19 @@
   "dependencies": {
     "mssql1": {
       "restored": true,
-      "restoreTime": "2024-04-27T12:48:46.9997812Z"
+      "restoreTime": "2024-05-16T17:08:21.6930241Z"
     }
   },
   "parameters": {
     "mssql1.subscriptionId": {
       "Name": "mssql1.subscriptionId",
       "Type": "subscription",
-      "Value": "743a29c1-5acc-4dfe-8836-a4447b62dd9d"
+      "Value": "6e100803-d4d2-4ced-a110-04c03b1fcb2f"
     },
     "mssql1.resourceGroupName": {
       "Name": "mssql1.resourceGroupName",
       "Type": "resourceGroup",
-      "Value": "DefaultResourceGroup-DEWC"
+      "Value": "ICT"
     }
   }
 }

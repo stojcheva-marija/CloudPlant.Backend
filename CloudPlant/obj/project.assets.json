@@ -3068,19 +3068,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marija\\.nuget\\packages\\": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant\\CloudPlant.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\IKT proekt\\cloudbackend\\CloudPlant.Backend\\CloudPlant\\CloudPlant.csproj",
       "projectName": "CloudPlant",
-      "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant\\CloudPlant.csproj",
-      "packagesPath": "C:\\Users\\Marija\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant\\obj\\",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\IKT proekt\\cloudbackend\\CloudPlant.Backend\\CloudPlant\\CloudPlant.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\IKT proekt\\cloudbackend\\CloudPlant.Backend\\CloudPlant\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Marija\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3088,18 +3093,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj": {
-              "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Domain\\CloudPlant.Domain.csproj"
+            "C:\\Users\\Asus\\Desktop\\IKT proekt\\cloudbackend\\CloudPlant.Backend\\CloudPlant.Domain\\CloudPlant.Domain.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\IKT proekt\\cloudbackend\\CloudPlant.Backend\\CloudPlant.Domain\\CloudPlant.Domain.csproj"
             },
-            "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Service\\CloudPlant.Service.csproj": {
-              "projectPath": "C:\\Users\\Marija\\Desktop\\Cloud Plant\\CloudPlant\\CloudPlant.Service\\CloudPlant.Service.csproj"
+            "C:\\Users\\Asus\\Desktop\\IKT proekt\\cloudbackend\\CloudPlant.Backend\\CloudPlant.Service\\CloudPlant.Service.csproj": {
+              "projectPath": "C:\\Users\\Asus\\Desktop\\IKT proekt\\cloudbackend\\CloudPlant.Backend\\CloudPlant.Service\\CloudPlant.Service.csproj"
             }
           }
         }
@@ -3158,7 +3162,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },

@@ -81,7 +81,7 @@ namespace CloudPlant.Service.Implementation
 
         public DeviceDTO EditDevice(DeviceDTO deviceDTO)
         {
-            var device = _deviceRepository.GetById(deviceDTO.Id);
+            var device = _deviceRepository.GetByCode(deviceDTO.Code);
             if (device == null)
             {
                 throw new DeviceNotFoundException($"Device with id {deviceDTO.Id} not found");
